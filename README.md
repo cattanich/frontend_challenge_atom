@@ -1,8 +1,9 @@
 # Frontend Challenge Atom
+**Realizado por Christian Cattani**
 
 ## Documentación
 
-### Decisiones de diseño
+### Descripción y decisiones
 - Se optó por una arquitectura modular y componentes standalone para facilitar la escalabilidad y mantenimiento.
 - Se utilizó Bootstrap con el tema Flatly de Bootswatch para el diseño responsive y accesible, evitando Angular Material por preferencias del usuario.
 - El manejo del estado y la comunicación con el backend se realiza mediante servicios Angular que consumen una API REST.
@@ -26,7 +27,7 @@
 - Inicialmente hubo problemas con la conversión de fechas de Firestore, que se resolvieron con mapeo adecuado en el servicio.
 - Se presentaron errores de CORS que se solucionaron configurando correctamente el backend.
 - Hubo confusión en el manejo del `userId` y `userEmail` para filtrar tareas, que se corrigió asegurando que el `userId` sea el identificador único del usuario y se use para filtrar las tareas.
-- Se eliminaron dependencias y referencias a Angular Material para evitar errores y se migró a Bootstrap con tema Flatly.
+- Se eliminaron dependencias y referencias a Angular Material para evitar errores y se migró a Bootstrap v5
 
 ---
 
