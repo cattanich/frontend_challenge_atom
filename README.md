@@ -5,20 +5,19 @@
 
 ### Descripción y decisiones
 - Se optó por una arquitectura modular y componentes standalone para facilitar la escalabilidad y mantenimiento.
-- Se utilizó Bootstrap con el tema Flatly de Bootswatch para el diseño responsive y accesible, evitando Angular Material por preferencias del usuario.
+- Se utilizó Bootstrap v5 para el diseño responsive y accesible, evitando Angular Material por problemas un UI.
 - El manejo del estado y la comunicación con el backend se realiza mediante servicios Angular que consumen una API REST.
 - Se implementó enrutamiento con lazy loading y guards para proteger las rutas que requieren autenticación.
 - El almacenamiento local usa `localStorage` para guardar el `userId` y `userEmail` del usuario autenticado.
 
 ### Tecnologías utilizadas
 - Angular 17
-- Bootstrap 5 con tema Flatly (Bootswatch)
+- Bootstrap 5
 - Firebase Firestore para backend y almacenamiento de datos
 - Express para API REST
 - RxJS para manejo de observables y asincronía
 
 ### Comentarios relevantes
-- Se decidió eliminar Angular Material para usar Bootstrap por preferencia del usuario.
 - Se implementó un diálogo de confirmación para creación de usuario usando `window.confirm` en lugar de componentes de Angular Material.
 - Se manejan correctamente los estados de las tareas con checkboxes y opciones para editar y eliminar.
 - Se aplicaron buenas prácticas de Angular como uso de observables, async pipes, trackBy en ngFor, y validaciones en formularios.
