@@ -1,0 +1,38 @@
+<div class="container mt-4 d-flex flex-column align-items-center">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form" novalidate>
+    <div class="mb-3">
+      <label for="title" class="form-label">Título</label>
+      <input id="title" type="text" class="form-control" formControlName="title" required aria-required="true" />
+      <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" class="text-danger">
+        El título es obligatorio
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripción</label>
+      <textarea id="description" class="form-control" formControlName="description" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
+      {{ editingTaskId ? 'Actualizar' : 'Agregar' }} tarea
+    </button>
+    <button *ngIf="editingTaskId" type="button" class="btn btn-secondary ms-2" (click)="cancelEdit()">Cancelar</button>
+  </form>
+
+  <ul class="list-group w-100 mt-4">
+    <li *ngFor="let task of tasks; trackBy: trackByUserId" class="list-group-item d-flex align-items-center justify-content-between">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [checked]="task.completed" (change)="toggleCompleted(task)" [id]="'task-' + task.id" />
+        <label class="form-check-label" [for]="'task-' + task.id" [class.text-decoration-line-through]="task.completed">
+          <strong>{{ task.title }}</strong><br />
+          <small>{{ task.description }}</small><br />
+          <small class="text-muted">Creado: {{ task.createdAt ? task.createdAt.toString() : 'Fecha no disponible' }}</small>
+        </label>
+      </div>
+      <div>
+        <button type="button" class="btn btn-sm btn-outline-primary me-2" (click)="editTask(task)">Editar</button>
+        <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteTask(task)">Eliminar</button>
+      </div>
+    </li>
+  </ul>
+  <button type="button" class="btn btn-danger mt-3" (click)="logout()">Cerrar sesión</button>
+  <footer class="footer-text">Challenge Técnico realizado por Christian Cattani</footer>
+</div>
