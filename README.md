@@ -33,7 +33,7 @@
 La aplicación está lista para ser ejecutada y probada con:
 
 ```
-cd task-list-app && npm start
+cd frontend_challenge_atom && npm start
 ```
 
 Luego acceder en `http://localhost:4200`.
