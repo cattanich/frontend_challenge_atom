@@ -12,7 +12,7 @@ export interface User {
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'http://localhost:3000'; // Adjust backend URL as needed
+  private baseUrl = 'https://backend-challenge-atom-8sq5mikod-christians-projects-7f3140a3.vercel.app'; // Adjust backend URL as needed
 
   constructor(private http: HttpClient) {}
 

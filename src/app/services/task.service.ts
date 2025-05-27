@@ -15,7 +15,7 @@ export interface Task {
   providedIn: 'root',
 })
 export class TaskService {
-  private baseUrl = 'http://localhost:3000'; // Ajustar URL del backend según sea necesario
+  private baseUrl = 'https://backend-challenge-atom-8sq5mikod-christians-projects-7f3140a3.vercel.app'; // Ajustar URL del backend según sea necesario
 
   constructor(private http: HttpClient) {}
 
